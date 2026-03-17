@@ -43,11 +43,11 @@ zip function.zip lambda_function.py
 echo "Erstelle Lambda Funktion..."
 aws lambda create-function \
     --function-name $LAMBDA_NAME \
-    --runtime python3.14 \
+    --runtime python3.12 \
     --role $ROLE_ARN \
     --handler lambda_function.lambda_handler \
     --zip-file fileb://function.zip \
-    --environment Variables="{OUT_BUCKET=$OUT_BUCKET}"
+    --environment Variables="{OUT_BUCKET_NAME=$OUT_BUCKET}"
 
 # Erlaubnis geben, dass der In-Bucket die Lambda triggern darf
 aws lambda add-permission \
