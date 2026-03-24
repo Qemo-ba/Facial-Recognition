@@ -2,8 +2,12 @@
 
 # 1. Variablen vom Benutzer abfragen
 read -p "Wie heisst das Bild genau (inkl. Dateiendung, z.B. einstein.jpg)? " IMAGE_FILE
-read -p "Wie heisst der Input-Bucket? " IN_BUCKET
-read -p "Wie heisst der Output-Bucket? " OUT_BUCKET
+IN_BUCKET="promi-in-bucket-gruppe-123456"
+OUT_BUCKET="promi-out-bucket-gruppe-123456"
+echo ""
+echo "Input Bucket: ${IN_BUCKET}"
+echo "Output Bucket: ${OUT_BUCKET}"
+echo ""
 
 # Dateinamen ohne Endung extrahieren (um den .json Dateinamen zu generieren)
 FILENAME="${IMAGE_FILE%.*}"
