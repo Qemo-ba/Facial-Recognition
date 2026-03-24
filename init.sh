@@ -4,6 +4,7 @@
 # ERROR HANDLING (Fehlerüberprüfung)
 # ==========================================
 set -e
+export AWS_PAGER=""
 
 error_handler() {
     echo "=========================================="
@@ -18,7 +19,7 @@ trap 'error_handler' ERR
 # Autor: Qemal 
 # Datum: 17.03.2026
 # Beschreibung: Initialisiert die AWS Umgebung
-# ==========================================SS
+# ==========================================
 
 echo "Starte AWS-Infrastruktur-Setup..."
 
