@@ -30,8 +30,17 @@ LAMBDA_NAME="PromiErkennerDemo"
 REGION="us-east-1" 
 
 echo "Erstelle S3 Buckets in Region $REGION..."
-aws s3 mb s3://$IN_BUCKET --region $REGION
-aws s3 mb s3://$OUT_BUCKET --region $REGION
+if ! aws s3 ls "s3://$IN_BUCKET" 2>/dev/null; then
+    aws s3 mb s3://$IN_BUCKET --region $REGION
+else
+    echo "In-Bucket existiert bereits."
+fi
+
+if ! aws s3 ls "s3://$OUT_BUCKET" 2>/dev/null; then
+    aws s3 mb s3://$OUT_BUCKET --region $REGION
+else
+    echo "Out-Bucket existiert bereits."
+fi
 
 echo "Hole Berechtigungen (LabRole)..."
 ROLE_ARN=$(aws iam get-role --role-name $ROLE_NAME --query 'Role.Arn' --output text)
@@ -41,15 +50,26 @@ echo "Verpacke den Python-Code in ein ZIP-Archiv..."
 zip function.zip lambda_function.py
 
 echo "Erstelle Lambda Funktion..."
-aws lambda create-function \
-    --function-name $LAMBDA_NAME \
-    --runtime python3.12 \
-    --role $ROLE_ARN \
-    --handler lambda_function.lambda_handler \
-    --zip-file fileb://function.zip \
-    --environment Variables="{OUT_BUCKET_NAME=$OUT_BUCKET}"
+if aws lambda get-function --function-name $LAMBDA_NAME 2>/dev/null; then
+    echo "Lambda existiert bereits, aktualisiere Code..."
+    aws lambda update-function-code \
+        --function-name $LAMBDA_NAME \
+        --zip-file fileb://function.zip
+else
+    aws lambda create-function \
+        --function-name $LAMBDA_NAME \
+        --runtime python3.12 \
+        --role $ROLE_ARN \
+        --handler lambda_function.lambda_handler \
+        --zip-file fileb://function.zip \
+        --environment Variables="{OUT_BUCKET_NAME=$OUT_BUCKET}"
+fi
 
 # Erlaubnis geben, dass der In-Bucket die Lambda triggern darf
+aws lambda remove-permission \
+    --function-name $LAMBDA_NAME \
+    --statement-id s3invoke 2>/dev/null || true
+
 aws lambda add-permission \
     --function-name $LAMBDA_NAME \
     --principal s3.amazonaws.com \
