@@ -22,9 +22,8 @@ trap 'error_handler' ERR
 
 echo "Starte AWS-Infrastruktur-Setup..."
 
-RANDOM_ID=$RANDOM
-IN_BUCKET="promi-in-bucket-gruppe-$RANDOM_ID"
-OUT_BUCKET="promi-out-bucket-gruppe-$RANDOM_ID"
+IN_BUCKET="promi-in-bucket-gruppe-123456"
+OUT_BUCKET="promi-out-bucket-gruppe-123456"
 ROLE_NAME="LabRole" 
 LAMBDA_NAME="PromiErkennerDemo"
 REGION="us-east-1" 
