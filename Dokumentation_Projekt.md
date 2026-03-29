@@ -303,16 +303,9 @@ Alle Testfälle wurden erfolgreich durchgeführt. Der Service verhält sich in a
 
 ### Aldin – Backend Developer
 
-<!-- 
-  Bitte hier deine persönliche Reflexion einfügen (ca. 150–200 Wörter).
-  Beantworte folgende Punkte:
-  - Was lief gut bei der Entwicklung der Lambda-Funktion?
-  - Was war herausfordernd (z.B. Rekognition API, Fehlerbehandlung, boto3)?
-  - Was würdest du beim nächsten Projekt anders machen?
-  - Was hast du persönlich gelernt?
--->
-
-*[Reflexion folgt – wird von Aldin ergänzt]*
+Ich war am Anfang etwas unsicher wegen der Lambda-Funktion, weil ich noch nie direkt mit der Rekognition API gearbeitet hatte. Aber es hat eigentlich gut geklappt. Die Funktion hat beim ersten richtigen Test sofort funktioniert, was mich selbst überrascht hat. Die boto3 Dokumentation hat mir dabei sehr geholfen.
+Was mich am Anfang etwas aufgehalten hat waren die IAM Berechtigungen. Im Learner-Lab kann man nicht einfach alles selbst einstellen und ich musste erst verstehen wie die LabRole funktioniert und welche Rechte Lambda braucht um auf S3 und Rekognition zugreifen zu können. Das hat etwas Zeit gekostet aber am Ende hat es funktioniert.
+Aus dem Unterricht hatte ich schon eine Vorstellung von Lambda und S3 aber wie man das alles zusammen zum Laufen bringt war neu für mich. Das war das Wertvollste was ich mitgenommen habe. Beim nächsten Projekt würde ich früher mit dem Testen anfangen und nicht erst warten bis alles fertig ist.
 
 ---
 
