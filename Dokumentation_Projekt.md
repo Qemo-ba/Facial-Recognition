@@ -311,16 +311,10 @@ Aus dem Unterricht hatte ich schon eine Vorstellung von Lambda und S3 aber wie m
 
 ### Qemal – Cloud Engineer
 
-<!-- 
-  Bitte hier deine persönliche Reflexion einfügen (ca. 150–200 Wörter).
-  Beantworte folgende Punkte:
-  - Was lief gut bei der Infrastruktur-Automatisierung mit init.sh?
-  - Was war herausfordernd (z.B. IAM-Berechtigungen, S3-Trigger, Idempotenz)?
-  - Was würdest du beim nächsten Projekt anders machen?
-  - Was hast du persönlich gelernt?
--->
-
-*[Reflexion folgt – wird von Qemal ergänzt]*
+Das Bauen der Infrastruktur lief eigentlich fast perfekt. Das init.sh Script war relativ schnell fertig weil ich die AWS CLI Befehle aus dem Unterricht schon kannte und wusste wie man die einzelnen Komponenten zusammenhängt. Es war ein gutes Gefühl zu sehen wie mit einem einzigen Befehl alles automatisch aufgebaut wird.
+Ein Problem hatte ich aber mit den Bucket Namen. Ich hatte zuerst eine zufällige ID am Ende des Namens eingefügt damit die Buckets eindeutig sind. Das war aber keine gute Idee weil das Script dann bei jedem Durchlauf andere Namen generiert hat und die Komponenten sich nicht mehr gefunden haben. Ich habe das dann geändert auf feste Namen ohne zufällige ID und danach hat alles wieder einwandfrei funktioniert.
+Schwieriger war es am Anfang auch mit den IAM Berechtigungen. Gerade der Teil wo Lambda die Erlaubnis braucht um vom S3 Bucket getriggert zu werden hat mich etwas Zeit gekostet. Man findet das nicht sofort in der Dokumentation und muss ein bisschen herumprobieren bis es passt.
+Da Dijar krank war habe ich zusätzlich noch die Testprotokolle übernommen. Die Tests selbst liefen dann alle sehr gut und ohne Probleme was gezeigt hat dass die Infrastruktur sauber aufgebaut war. Beim nächsten Projekt würde ich von Anfang an auf feste, klar benannte Variablen setzen und nicht versuchen etwas zu automatisieren was dann mehr Probleme macht als es löst.
 
 ---
 
