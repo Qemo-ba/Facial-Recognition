@@ -291,9 +291,9 @@ Die Funktion enthält eine mehrstufige Fehlerbehandlung:
 
 | #     | Testfall                        | Testdatum  | Testperson | Ergebnis    |
 |:----- |:------------------------------- |:---------- |:---------- |:----------- |
-| TF-01 | Erkennung Albert Einstein       | 24.03.2026 | Dijar      | ✅ Bestanden |
-| TF-02 | Erkennung Jeff Bezos            | 24.03.2026 | Dijar      | ✅ Bestanden |
-| TF-03 | Negativtest (unbekannte Person) | 24.03.2026 | Dijar      | ✅ Bestanden |
+| TF-01 | Erkennung Albert Einstein       | 24.03.2026 | Qemal      | ✅ Bestanden |
+| TF-02 | Erkennung Jeff Bezos            | 24.03.2026 | Qemal      | ✅ Bestanden |
+| TF-03 | Negativtest (unbekannte Person) | 24.03.2026 | Qemal      | ✅ Bestanden |
 
 Alle Testfälle wurden erfolgreich durchgeführt. Der Service verhält sich in allen getesteten Szenarien wie erwartet.
 
