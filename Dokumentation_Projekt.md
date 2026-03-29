@@ -320,13 +320,6 @@ Da Dijar krank war habe ich zusätzlich noch die Testprotokolle übernommen. Die
 
 ### Dijar – Scrum Master & QA
 
-<!-- 
-  Bitte hier deine persönliche Reflexion einfügen (ca. 150–200 Wörter).
-  Beantworte folgende Punkte:
-  - Was lief gut bei der Dokumentation und den Tests?
-  - Was war herausfordernd (z.B. Testprotokoll, Screenshots, Koordination)?
-  - Was würdest du beim nächsten Projekt anders machen?
-  - Was hast du persönlich gelernt?
--->
-
-*[Reflexion folgt – wird von Dijar ergänzt]*
+Ich war leider während eines Teils des Projekts krank und konnte deshalb nicht alles so umsetzen wie geplant. Qemal hat in dieser Zeit die Testprotokolle übernommen was ich ihm sehr danke. Mein Hauptbeitrag war die Dokumentation aufzusetzen und zu strukturieren.
+Die Dokumentation hat gut funktioniert. Markdown ist wenn man sich mal daran gewöhnt hat wirklich praktisch und die Struktur mit README und DOKUMENTATION war von Anfang an klar.
+Was ich mitgenommen habe ist dass man im Team flexibel sein muss wenn etwas nicht nach Plan läuft. Beim nächsten Projekt würde ich darauf achten früher zu kommunizieren wenn man ausfällt damit das Team mehr Zeit hat sich anzupassen.
